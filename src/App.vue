@@ -1,6 +1,6 @@
 <template>
   
-  <HelloWorld msg="olaaa"/>
+  <HelloWorld msg="Sobre o Profissional"/>
 </template>
 
 <script>
@@ -15,12 +15,19 @@ export default {
 </script>
 
 <style>
+
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Comfortaa', cursive, Helvetica, Arial, sans-serif;
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #483698;
   margin-top: 60px;
+  
+}
+body{
+  background-color: #FFE766;
 }
 </style>
