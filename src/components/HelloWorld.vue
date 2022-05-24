@@ -1,12 +1,12 @@
 <template>
  
     
-<div class="card">
-  <div class="card-body">
-      <h1>{{titulo}}</h1>
+<div class="card mx-5 p-5 shadow rd">
+  <div class="card-body ">
+      <h1 class="mb-5">{{titulo}}</h1>
 
 
-    <form class="row g-3 needs-validation" novalidate>
+    <form  class="row g-3 needs-validation "   >
 
       <div class="col-md-6">
 
@@ -30,7 +30,7 @@
 <div class="row">
 
 
-<div class="col-md-3">
+<div class="col-md-6">
   <label for="validationCustom04" class="form-label">Estado*</label>
   <select class="form-select" id="validationCustom04" required>
     <option selected disabled value="">Choose...</option>
@@ -52,12 +52,12 @@
 </div>
 
 
-<div class="my-3 col-md-3">
-    <button class="btn btn-primary" type="submit">Proximo</button>
+<div class="my-3 col-md-6">
+    <button  class="btn btn-primary" type="submit">Proximo</button>
   </div>
       </div>
 <div class="col-md-6">
-  <img src="../assets/1.png" width="600em" alt="">
+  <img src="../assets/1.png" width="500em" alt="">
 
 </div>
 
@@ -104,5 +104,11 @@ li {
 }
 a {
   color: #42b983;
+}
+</style>
+
+<style>
+.rd{
+  border-radius: 25px;
 }
 </style>
