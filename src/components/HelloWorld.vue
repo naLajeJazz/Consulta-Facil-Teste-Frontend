@@ -1,28 +1,32 @@
 <template>
  
+ <div class="container">
+
+ 
     
-<div class="card mx-5 p-5 shadow rd">
+<div class="card mx-5 mb-5 p-3 shadow rd">
   <div class="card-body ">
-      <h1 class="mb-5">{{titulo}}</h1>
+      <h1 class="mb-3">{{titulo}}</h1>
+      <h3 class="mb-3 text-start">Dados do profissional</h3>
 
 
     <form  class="row g-3 needs-validation "   >
 
-      <div class="col-md-6">
+      <div class="col-md-6 ">
 
-        <label for="validationCustom01" class="form-label">Nome completo*</label>
+        <label for="validationCustom01" class="form-label my-3">Nome completo*</label>
         <input type="text" class="form-control" id="validationCustom01" placeholder="Digite o nome completo" value="" required>
         <div class="valid-feedback">
           Looks good!
         </div>
 
-        <label for="validationCustom05" class="form-label">CPF*</label>
+        <label for="validationCustom05" class="form-label my-3">CPF*</label>
         <input type="text" class="form-control" id="validationCustom05" required>
         <div class="invalid-feedback">
          Please provide a valid zip.
         </div>
 
-        <label for="validationCustom05" class="form-label">Número de celular*</label>
+        <label for="validationCustom05" class="form-label my-3">Número de celular*</label>
         <input type="text" class="form-control" id="validationCustom05" required>
         <div class="invalid-feedback">
           Please provide a valid zip.
@@ -31,7 +35,7 @@
 
 
 <div class="col-md-6">
-  <label for="validationCustom04" class="form-label">Estado*</label>
+  <label for="validationCustom04" class="form-label my-3">Estado*</label>
   <select class="form-select" id="validationCustom04" required>
     <option selected disabled value="">Choose...</option>
     <option>...</option>
@@ -42,7 +46,7 @@
     
   </div>
   <div class="col-md-3">
-    <label for="validationCustom03" class="form-label">Cidade*</label>
+    <label for="validationCustom03" class="form-label my-3">Cidade*</label>
     <input type="text" class="form-control" id="validationCustom03" required>
     <div class="invalid-feedback">
       Please provide a valid city.
@@ -66,7 +70,7 @@
   </div>
 </div>
 
-    
+   </div> 
 
 </template>
 
@@ -89,10 +93,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1{
+  font-family: 'Comfortaa', cursive, Helvetica, Arial, sans-serif;
   font-weight: bold;
+ 
 }
 h3 {
-  margin: 40px 0 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:lighter;
+  color: #282828;
+ 
 }
 ul {
   list-style-type: none;
@@ -104,6 +113,9 @@ li {
 }
 a {
   color: #42b983;
+}
+label{
+  color: #282828;
 }
 </style>
 
