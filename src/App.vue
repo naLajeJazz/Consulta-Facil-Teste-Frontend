@@ -1,21 +1,31 @@
 <template>
   
-  <HelloWorld msg="Sobre o Profissional"/>
+  <PaginaA  msg="Sobre o Profissional"/>
   <PaginaB msg="Sobre o Profissional"/>
+  <PaginaC msg="Sobre o Profissional"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PaginaA from './components/PaginaA.vue'
 import PaginaB from './components/PaginaB.vue'
+import PaginaC from './components/PaginaC.vue'
+
 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    PaginaB
+    PaginaA,
+    PaginaB,
+    PaginaC
     
-}
+},
+data() {
+    return {
+      page1: true
+    }
+  },
+
 }
 </script>
 
