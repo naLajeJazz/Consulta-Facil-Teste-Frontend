@@ -1,16 +1,21 @@
 <template>
   
   <HelloWorld msg="Sobre o Profissional"/>
+  <PaginaB msg="Sobre o Profissional"/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import PaginaB from './components/PaginaB.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+    PaginaB
+    
+}
 }
 </script>
 

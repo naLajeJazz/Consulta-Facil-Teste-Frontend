@@ -6,8 +6,8 @@
     
 <div class="card mx-5 mb-5 p-3 shadow rd">
   <div class="card-body ">
-      <h1 class="mb-3 text-start">{{titulo}}</h1>
-      <h3 class="my-5 text-start">Dados do profissional</h3>
+      <h1 class="mb-3">{{titulo}}</h1>
+      <h3 class="mb-3 text-start">Dados do profissional</h3>
 
 
     <form  class="row g-3 needs-validation "   >
@@ -45,7 +45,7 @@
   </div>
     
   </div>
-  <div class="col-md-6">
+  <div class="col-md-3">
     <label for="validationCustom03" class="form-label my-3">Cidade*</label>
     <input type="text" class="form-control" id="validationCustom03" required>
     <div class="invalid-feedback">
@@ -54,22 +54,13 @@
   </div>
 
 </div>
-<div class="row justify-content-center my-5 ">
-  <div class="bar col-md-3"></div>
-  <div class="bar2 col-md-3"></div>
-  <div class="col-md-3">
-    <span class="">1 de 2</span>
 
+
+<div class="my-3 col-md-6">
+    <button  class="btn btn-primary" type="submit">Proximo</button>
   </div>
-
-</div>
-
-<div class="my-3 col-md-12 d-grid gap-2 bck rd " >
-    <button  class="btn text-light" type="submit">PRÓXIMO</button>
-  </div>
-
       </div>
-<div class="col-md-6 my-5 ">
+<div class="col-md-6 my-5">
   <img src="../assets/1.png" width="90%" alt="">
 
 </div>
@@ -85,14 +76,14 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'PaginaB',
   props: {
     msg: String
    
   },
   data() {
     return {
-      titulo: 'Sobre o professional'
+      titulo: 'Sobre o professional2'
     }
   },
 
@@ -124,7 +115,6 @@ a {
   color: #42b983;
 }
 label{
-  font-family: 'Open Sans', sans-serif;
   color: #282828;
 }
 </style>
@@ -132,23 +122,5 @@ label{
 <style>
 .rd{
   border-radius: 25px;
-}
-.bck{
-  background-color: #483698;
-}
-.bar{
-  background-color: #483698;
-  width: 35%;
-  height: 25px;
-  border-radius:2px;
-}
-.bar2{
-  background-color: #B9B9B9;
-  width: 35%;
-  height: 25px;
-  border-radius:2px;
-}
-.borda{
-  border: 1px solid red;
 }
 </style>
