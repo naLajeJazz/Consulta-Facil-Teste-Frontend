@@ -129,7 +129,7 @@ label{
 }
 </style>
 
-<style>
+<style scoped>
 .rd{
   border-radius: 25px;
 }
