@@ -12,9 +12,9 @@
 
     <form  class="row g-3 needs-validation "   >
 
-      <div class="col-md-6 ">
+      <div class="col-md-6 text-start">
 
-        <label for="validationCustom01" class="form-label my-3">Nome completo*</label>
+        <label for="validationCustom01" class="form-label my-3 ">Nome completo*</label>
         <input type="text" class="form-control" id="validationCustom01" placeholder="Digite o nome completo" value="" required>
         <div class="valid-feedback">
           Looks good!
@@ -131,7 +131,7 @@ label{
 
 <style scoped>
 .rd{
-  border-radius: 25px;
+  border-radius: 16px;
 }
 .bck{
   background-color: #483698;

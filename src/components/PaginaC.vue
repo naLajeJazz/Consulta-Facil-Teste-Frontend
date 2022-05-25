@@ -9,18 +9,18 @@
 
                   <div class=" col-md-6">
 
-                    <ul class="list-group text-start">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
-                      <li class="list-group-item">A fourth item</li>
-                      <li class="list-group-item">And a fifth one</li>
+                    <ul class="my-4 list text-start">
+                      <li class="mb-4 list-group-item" v-for="cadastro in lista" :key="cadastro.id" >
+                      {{cadastro}}
+                      
+                      </li>
+                      
                     </ul>
 
                     
                     
                    
-                    <div class="my-3 col-md-12 d-grid gap-2 bck rd " >
+                    <div class="my-4 col-md-12 d-grid  bck rd " >
                       <button  class="btn text-dark fw-bold" type="submit">CADASTRAR PROFISSIONAL</button>
                     </div>
 
@@ -30,13 +30,13 @@
 
                   </div>
 
-                  <div class=" col-md-6 ">
-
-                    <img src="../assets/3.png" width="90%" alt="">
-
-                  </div>
 
             
+                  <div class=" col-md-6   ">
+
+                    <img src="../assets/3.png"   alt="imagem">
+
+                  </div>
             
             </div>
 
@@ -55,7 +55,9 @@ export default {
   },
   data() {
     return {
-      titulo: 'Revisão do cadastro'
+      titulo: 'Revisão do cadastro',
+      lista: ['Nome completo','CPF','Número de celular ou telefone','Estado/Cidade',
+      'Especialidade principal','Preço da consulta','Formas de pagamento da consulta'],
     }
   },
 
@@ -88,15 +90,14 @@ a {
   text-decoration: none;
   color: #483698;
 }
-label{
-  font-family: 'Open Sans', sans-serif;
-  color: #282828;
+img {
+  width:90%;
 }
 </style>
 
 <style scoped>
 .rd{
-  border-radius: 25px;
+  border-radius: 16px;
 }
 .bck{
   background-color: #FBDE40;

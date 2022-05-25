@@ -4,7 +4,7 @@
 
  
     
-      <div class="card mx-5 mb-5 p-3 shadow rd">
+      <div class="card mx-5 mb-5 p-3 shadow rd text-start">
           <div class="card-body ">
             <h1 class="mb-3 text-start">{{titulo}}</h1>
             <h3 class="my-5 text-start">Detalhes do atendimento</h3>
@@ -145,7 +145,7 @@ label{
 
 <style scoped>
 .rd{
-  border-radius: 25px;
+  border-radius: 16px;
 }
 .bck{
   background-color: #483698;
