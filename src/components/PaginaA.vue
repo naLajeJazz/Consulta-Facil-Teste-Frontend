@@ -37,8 +37,8 @@
 <div class="col-md-6">
   <label for="validationCustom04" class="form-label my-3">Estado*</label>
   <select class="form-select" id="validationCustom04" required>
-    <option selected disabled value="">Choose...</option>
-    <option>...</option>
+    <option selected disabled value="">escolha estado</option>
+    <option>{{info}}</option>
   </select>
   <div class="invalid-feedback">
     Please select a valid state.
@@ -68,6 +68,8 @@
     <button  class="btn text-light" type="submit">PRÓXIMO</button>
   </div>
 
+  <div v-for="inf of info" :key="inf.id">{{inf.nome}}</div>
+
       </div>
 <div class="col-md-6 my-5 ">
   <img src="../assets/1.png" width="90%" alt="">
@@ -84,6 +86,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'PaginaA',
   props: {
@@ -92,9 +95,15 @@ export default {
   },
   data() {
     return {
-      titulo: 'Sobre o professional'
+      titulo: 'Sobre o professional',
+      info: []
     }
   },
+  mounted () {
+    axios
+      .get('https://api-teste-front-end-fc.herokuapp.com/estados')
+      .then(response => (this.info = response.data))
+  }
 
 }
 </script>
