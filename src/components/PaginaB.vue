@@ -16,9 +16,8 @@
                   
                   <select class="form-select" aria-label="Default select example"  >
                     <option selected >Selecione a especialidade</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option v-for="esp in especialidade" :key="esp" >{{esp.nome}}</option>
+                    
                   </select>
         
                 <label for="validationCustom05" class="form-label my-3">Informe o valor*</label>
@@ -84,7 +83,7 @@
 
       </div>
 <div class="col-md-6 my-5 ">
-  <img src="../assets/2.png" width="90%" alt="">
+  <img src="../assets/2.png"  alt="">
 
 </div>
 
@@ -98,6 +97,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'PaginaB',
   props: {
@@ -106,9 +106,17 @@ export default {
   },
   data() {
     return {
-      titulo: 'Sobre o Atendimento'
+      titulo: 'Sobre o Atendimento',
+      especialidade: []
+
     }
   },
+  mounted () {
+    axios
+      .get('https://api-teste-front-end-fc.herokuapp.com/especialidades')
+      .then(response => (this.especialidade = response.data))
+    
+  }
 
 }
 </script>
@@ -140,6 +148,9 @@ a {
 label{
   font-family: 'Open Sans', sans-serif;
   color: #282828;
+}
+img {
+  width: 90%;
 }
 </style>
 

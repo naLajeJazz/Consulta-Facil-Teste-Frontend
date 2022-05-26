@@ -20,7 +20,7 @@
           Looks good!
         </div>
 
-        <label for="validationCustom05" class="form-label my-3">CPF*</label>
+        <label for="validationCustom05" class="form-label my-3" aria-placeholder="ola">CPF*</label>
         <input type="text" class="form-control" id="validationCustom05" required>
         <div class="invalid-feedback">
          Please provide a valid zip.
@@ -37,20 +37,18 @@
 <div class="col-md-6">
   <label for="validationCustom04" class="form-label my-3">Estado*</label>
   <select class="form-select" id="validationCustom04" required>
-    <option selected disabled value="">escolha estado</option>
-    <option>{{info}}</option>
+    <option selected disabled value="">selecione o estado</option>
+    <option v-for="est in estado" :key="est.id">{{est.nome}}</option>
   </select>
-  <div class="invalid-feedback">
-    Please select a valid state.
-  </div>
+  
     
   </div>
   <div class="col-md-6">
     <label for="validationCustom03" class="form-label my-3">Cidade*</label>
-    <input type="text" class="form-control" id="validationCustom03" required>
-    <div class="invalid-feedback">
-      Please provide a valid city.
-    </div>
+    <select class="form-select" id="validationCustom04" required>
+    <option selected disabled value="">selecione a cidade</option>
+    <option v-for="cid in cidade" :key="cid.id">{{cid.nome}}</option>
+  </select>
   </div>
 
 </div>
@@ -68,11 +66,11 @@
     <button  class="btn text-light" type="submit">PRÓXIMO</button>
   </div>
 
-  <div v-for="inf of info" :key="inf.id">{{inf.nome}}</div>
+  <div v-for="c in cpf" :key="c.id">{{c.cpf}}</div>
 
       </div>
 <div class="col-md-6 my-5 ">
-  <img src="../assets/1.png" width="90%" alt="">
+  <img src="../assets/1.png"  alt="">
 
 </div>
 
@@ -96,13 +94,22 @@ export default {
   data() {
     return {
       titulo: 'Sobre o professional',
-      info: []
+      estado: [],
+      cidade: [],
+      cpf: []
+      
     }
   },
   mounted () {
     axios
       .get('https://api-teste-front-end-fc.herokuapp.com/estados')
-      .then(response => (this.info = response.data))
+      .then(response => (this.estado = response.data))
+    axios
+      .get('https://api-teste-front-end-fc.herokuapp.com/cidades')
+      .then(response => (this.cidade = response.data))
+    axios
+      .get('https://api-teste-front-end-fc.herokuapp.com/profissionais')
+      .then(response => (this.cpf = response.data))
   }
 
 }
@@ -135,6 +142,9 @@ a {
 label{
   font-family: 'Open Sans', sans-serif;
   color: #282828;
+}
+img {
+  width: 90%;
 }
 </style>
 
