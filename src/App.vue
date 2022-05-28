@@ -1,14 +1,10 @@
 <template>
   <CadastroPage/>
-  <PaginaA  msg="Sobre o Profissional"/>
-  <PaginaB msg="Sobre o Profissional"/>
-  <PaginaC msg="Sobre o Profissional"/>
+  
 </template>
 
 <script>
-import PaginaA from './components/PaginaA.vue'
-import PaginaB from './components/PaginaB.vue'
-import PaginaC from './components/PaginaC.vue'
+
 import CadastroPage from './components/CadastroPage.vue'
 
 
@@ -17,9 +13,7 @@ import CadastroPage from './components/CadastroPage.vue'
 export default {
   name: 'App',
   components: {
-    PaginaA,
-    PaginaB,
-    PaginaC,
+    
     CadastroPage
 },
 data() {

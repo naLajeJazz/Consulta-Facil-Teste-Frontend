@@ -61,8 +61,10 @@
 </div>
 
 
+<!--     
 
   <div v-for="c in cpf" :key="c.id">{{c.cpf}}</div>
+-->
 
       </div>
 <div class="col-md-6 my-5 ">
@@ -105,7 +107,7 @@
         
         <label for="validationCustom05" class="form-label my-3">Formas de pagamento da consulta*</label>
         <div class="card shadow-sm my-3">
-          <div class="card-body bck2">
+          <div class="card-body bck3">
             <div class="form-check">
               <input class="form-check-input " type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label " for="flexRadioDefault1">
@@ -116,7 +118,7 @@
         </div>
 
         <div class="card shadow-sm">
-          <div class="card-body bck2">
+          <div class="card-body bck3">
             <div class="form-check ">
               <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
@@ -127,7 +129,7 @@
         </div>
 
         <div class="card shadow-sm my-3">
-          <div class="card-body bck2">
+          <div class="card-body bck3">
             <div class="form-check ">
               <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
@@ -170,18 +172,41 @@
 
       <div class="paginaC" v-else-if="seletorPage==2">
       
-        <h1 class="mb-3 text-start">Revisão do cadastro</h1>
+<div class="row">
+        <h1 class="mb-3 text-start ps-5">Revisão do cadastro</h1>
 
-                  <div class=" col-md-6">
+
+                  <div class=" col-md-6 text-start ps-5  my-4">
 
                    
-                    <div>texto</div>
-                    <div>texto</div>
-                    <div>texto</div>
-                    <div>texto</div>
-                    <div>texto</div>
-                    <div>texto</div>
+                    <div class="revisao">
+                    <li class="">
+
+                      <ul class="fw-bold">Nome completo</ul>
+                      <ul class="fw-normal mb-5">Nome completo</ul>
+
+                      <ul class="fw-bold">CPF</ul>
+                      <ul class="fw-normal mb-5">Nome completo</ul>
+
+                      <ul class="fw-bold">Número de celular ou telefone</ul>
+                      <ul class="fw-normal mb-5">Nome completo</ul>
+
+                      <ul class="fw-bold">Estado/Cidade</ul>
+                      <ul class="fw-normal mb-5">Nome completo</ul>
+
+                      <ul class="fw-bold">Especialidade principal</ul>
+                      <ul class="fw-normal mb-5">Nome completo</ul>
+
+                      <ul class="fw-bold">Preço da consulta</ul>
+                      <ul class="fw-normal mb-5">Nome completo</ul>
+
+                      <ul class="fw-bold">Formas de pagamento da consulta</ul>
+                      <ul class="fw-normal mb-5">Nome completo</ul>
+
+                    </li>
+                    </div>
                     
+                
 
                    
                    
@@ -192,11 +217,12 @@
 
 
             
-                  <div class=" col-md-6 borda  ">
+                  <div class=" col-md-6 my-5   ">
 
                     <img src="../assets/3.png"   alt="imagem">
 
                   </div>
+</div>
       
       </div>
 
@@ -207,12 +233,12 @@
         <button  class="btn text-light" type="submit" @click="f()">PRÓXIMO</button>
       </div>
 
-      <div class="my-4 col-md-12 d-grid  bck rd " v-if="seletorPage==2" >
+      <div class="my-4 col-md-12 d-grid  bck2 rd " v-if="seletorPage==2" >
         <button  class="btn text-dark fw-bold" type="submit">CADASTRAR PROFISSIONAL</button>
       </div>
 
       <div>
-        <a href="" class="fw-bold" v-if="seletorPage==2">Editar cadastro</a> 
+        <a href="" class="fw-bold edCad" v-if="seletorPage==2">Editar cadastro</a> 
       </div>
 
            
@@ -240,8 +266,7 @@ export default {
       cidade: [],
       cpf: [],
       especialidade: [],
-      lista: ['Nome completo','CPF','Número de celular ou telefone','Estado/Cidade',
-      'Especialidade principal','Preço da consulta','Formas de pagamento da consulta'],
+
       f:()=>{this.seletorPage+=1},
       v:()=>{this.seletorPage-=1}
       
@@ -294,7 +319,7 @@ label{
   color: #282828;
 }
 img {
-  width: 90%;
+  width: 98%;
 }
 </style>
 
@@ -304,6 +329,12 @@ img {
 }
 .bck{
   background-color: #483698;
+}
+.bck2{
+  background-color: #FBDE40;
+}
+.bck3 {
+  background-color: #F9F9F9;
 }
 .bar{
   background-color: #483698;
@@ -316,6 +347,14 @@ img {
   width: 35%;
   height: 25px;
   border-radius:2px;
+}
+.revisao {
+  font-family: 'Open Sans', sans-serif;
+  color: #282828;
+}
+.edCad {
+  text-decoration: none;
+  color: #483698 ;
 }
 .borda{
   border: 1px solid red;
