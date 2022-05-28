@@ -1,5 +1,5 @@
 <template>
- <a class="text-dark" href="" @click="v()"> voltar </a>
+ <a class="text-dark" href="#" @click="v()"> voltar </a>
 <div class="container">
     <div class="card mx-5 mb-5 p-3 shadow rd">
       <div class="card-body ">
@@ -67,7 +67,7 @@
 -->
 
       </div>
-<div class="col-md-6 my-5 ">
+<div class="col-md-6 my-auto  ">
   <img src="../assets/1.png"  alt="">
 
 </div>
@@ -145,6 +145,7 @@
 
 <div class="row justify-content-center my-5 ">
   <div class="bar col-md-6"></div>
+  <div class="bar col-md-6"></div>
   
   <div class="col-md-3">
     <span class="">2 de 2</span>
@@ -156,7 +157,7 @@
 
 
       </div>
-<div class="col-md-6 my-5 ">
+<div class="col-md-6 my-auto  ">
   <img src="../assets/2.png"  alt="">
 
 </div>
@@ -217,9 +218,9 @@
 
 
             
-                  <div class=" col-md-6 my-5   ">
+                  <div class=" col-md-6  my-auto  ">
 
-                    <img src="../assets/3.png"   alt="imagem">
+                    <img  src="../assets/3.png"   alt="imagem">
 
                   </div>
 </div>
@@ -229,16 +230,16 @@
 
       
 
-      <div class="my-3 col-md-12 d-grid gap-2 bck rd " v-if="seletorPage==0 || seletorPage==1" >
+      <div class="my-3 col-md-6 d-grid gap-2 bck rd " v-if="seletorPage==0 || seletorPage==1" >
         <button  class="btn text-light" type="submit" @click="f()">PRÓXIMO</button>
       </div>
 
-      <div class="my-4 col-md-12 d-grid  bck2 rd " v-if="seletorPage==2" >
+      <div class="my-4 col-md-6 d-grid  bck2 rd " v-if="seletorPage==2" >
         <button  class="btn text-dark fw-bold" type="submit">CADASTRAR PROFISSIONAL</button>
       </div>
 
       <div>
-        <a href="" class="fw-bold edCad" v-if="seletorPage==2">Editar cadastro</a> 
+        <a href="" class="borda  fw-bold edCad" v-if="seletorPage==2">Editar cadastro</a> 
       </div>
 
            
@@ -319,7 +320,7 @@ label{
   color: #282828;
 }
 img {
-  width: 98%;
+  width: 95%;
 }
 </style>
 
