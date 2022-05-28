@@ -1,5 +1,5 @@
 <template>
-  
+  <CadastroPage/>
   <PaginaA  msg="Sobre o Profissional"/>
   <PaginaB msg="Sobre o Profissional"/>
   <PaginaC msg="Sobre o Profissional"/>
@@ -9,6 +9,8 @@
 import PaginaA from './components/PaginaA.vue'
 import PaginaB from './components/PaginaB.vue'
 import PaginaC from './components/PaginaC.vue'
+import CadastroPage from './components/CadastroPage.vue'
+
 
 
 
@@ -17,8 +19,8 @@ export default {
   components: {
     PaginaA,
     PaginaB,
-    PaginaC
-    
+    PaginaC,
+    CadastroPage
 },
 data() {
     return {
