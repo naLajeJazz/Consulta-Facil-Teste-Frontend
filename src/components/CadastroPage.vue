@@ -1,5 +1,12 @@
 <template>
- <a class="text-dark" href="#" @click="v()"> voltar </a>
+
+  <a  href="#" @click="v()">  
+<div class="text-start text-dark fw-bold container ms-5 p-3" >
+<svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+</svg>
+  </div>
+</a>
 <div class="container">
     <div class="card mx-5 mb-5 p-3 shadow rd">
       <div class="card-body ">
@@ -257,7 +264,7 @@
       </div>
 
       <div>
-        <a href="" class="borda  fw-bold edCad" v-if="seletorPage==2">Editar cadastro</a> 
+        <a href="#" class="borda  fw-bold edCad" v-if="seletorPage==2" @click="seletorPage=0">Editar cadastro</a> 
       </div>
 
            
