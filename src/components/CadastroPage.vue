@@ -13,37 +13,33 @@
       <div class="col-md-6 text-start">
 
         <label for="validationCustom01" class="form-label my-3 ">Nome completo*</label>
-        <input type="text" class="form-control" id="validationCustom01" placeholder="Digite o nome completo" value="" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
+        <input type="text" class="form-control"  placeholder="Digite o nome completo"  v-model="nomeData" required>
+       
 
         <label for="validationCustom05" class="form-label my-3" aria-placeholder="ola">CPF*</label>
-        <input type="text" class="form-control" id="validationCustom05" required>
+        <input type="text" class="form-control" v-model="cpfData" required>
         <div class="invalid-feedback">
          Please provide a valid zip.
         </div>
 
         <label for="validationCustom05" class="form-label my-3">Número de celular*</label>
-        <input type="text" class="form-control" id="validationCustom05" required>
-        <div class="invalid-feedback">
-          Please provide a valid zip.
-        </div>
+        <input type="text" class="form-control" v-model="telefoneData" required>
+        
 <div class="row">
 
 
 <div class="col-md-6">
   <label for="validationCustom04" class="form-label my-3">Estado*</label>
-  <select class="form-select" id="validationCustom04" required>
+  <select class="form-select" id="validationCustom04" v-model="estadoData" required>
     <option selected disabled value="">selecione o estado</option>
-    <option v-for="est in estado" :key="est.id">{{est.nome}}</option>
+    <option v-for="est in estado" :key="est.id">{{est.nome}}  </option>
   </select>
   
     
   </div>
   <div class="col-md-6">
     <label for="validationCustom03" class="form-label my-3">Cidade*</label>
-    <select class="form-select" id="validationCustom04" required>
+    <select class="form-select" id="validationCustom04" v-model="cidadeData" required>
     <option selected disabled value="">selecione a cidade</option>
     <option v-for="cid in cidade" :key="cid.id">{{cid.nome}}</option>
   </select>
@@ -90,7 +86,7 @@
                 <div class="col-md-6 ">
                   <label for="validationCustom01" class="form-label my-3">Especialidade principal*</label>
                   
-                    <select class="form-select" aria-label="Default select example"  >
+                    <select class="form-select" aria-label="Default select example" v-model="especialidadeData" >
                     <option selected >Selecione a especialidade</option>
                     <option v-for="esp in especialidade" :key="esp" >{{esp.nome}}</option>
                     
@@ -101,7 +97,7 @@
                   
                   <div class="input-group mb-3 ">
                     <span class="input-group-text bck text-light">R$</span>
-                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
+                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" v-model="valorData" required>
                   </div>
                 </div>
         
@@ -184,22 +180,22 @@
                     <li class="">
 
                       <ul class="fw-bold">Nome completo</ul>
-                      <ul class="fw-normal mb-5">Nome completo</ul>
+                      <ul class="fw-normal mb-5">{{nomeData}}</ul>
 
                       <ul class="fw-bold">CPF</ul>
-                      <ul class="fw-normal mb-5">Nome completo</ul>
+                      <ul class="fw-normal mb-5">{{cpfData}}</ul>
 
                       <ul class="fw-bold">Número de celular ou telefone</ul>
-                      <ul class="fw-normal mb-5">Nome completo</ul>
+                      <ul class="fw-normal mb-5">{{telefoneData}}</ul>
 
                       <ul class="fw-bold">Estado/Cidade</ul>
-                      <ul class="fw-normal mb-5">Nome completo</ul>
+                      <ul class="fw-normal mb-5">{{estadoData+cidadeData}}</ul>
 
                       <ul class="fw-bold">Especialidade principal</ul>
-                      <ul class="fw-normal mb-5">Nome completo</ul>
+                      <ul class="fw-normal mb-5">{{especialidadeData}}</ul>
 
                       <ul class="fw-bold">Preço da consulta</ul>
-                      <ul class="fw-normal mb-5">Nome completo</ul>
+                      <ul class="fw-normal mb-5">{{valorData}}</ul>
 
                       <ul class="fw-bold">Formas de pagamento da consulta</ul>
                       <ul class="fw-normal mb-5">Nome completo</ul>
@@ -267,6 +263,13 @@ export default {
       cidade: [],
       cpf: [],
       especialidade: [],
+      nomeData:"",
+      cpfData:"",
+      estadoData:"",
+      cidadeData:"",
+      telefoneData:"",
+      valorData:"",
+      especialidadeData:"",
 
       f:()=>{this.seletorPage+=1},
       v:()=>{this.seletorPage-=1}
