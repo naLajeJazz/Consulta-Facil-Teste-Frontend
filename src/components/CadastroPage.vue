@@ -105,7 +105,7 @@
         <div class="card shadow-sm my-3">
           <div class="card-body bck3">
             <div class="form-check">
-              <input class="form-check-input " type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
+              <input class="form-check-input " type="checkbox" name="flexRadioDefault" id="flexRadioDefault1" @click="dinheiro()">
                 <label class="form-check-label " for="flexRadioDefault1">
                 Em dinheiro
                 </label>
@@ -116,7 +116,7 @@
         <div class="card shadow-sm">
           <div class="card-body bck3">
             <div class="form-check ">
-              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
+              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1" @click="pix()">
                 <label class="form-check-label" for="flexRadioDefault1">
                 Pix
                 </label>
@@ -127,11 +127,33 @@
         <div class="card shadow-sm my-3">
           <div class="card-body bck3">
             <div class="form-check ">
-              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
+              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1" v-model="cartao" @click="credito()">
                 <label class="form-check-label" for="flexRadioDefault1">
                 Cartão de crédito
                 </label>
             </div>
+              <div class="" v-if="cartao">
+              parcelemento em:
+
+                <div class="form-check ">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" @click="parcelado1()" >
+                    <label class="form-check-label" for="flexRadioDefault1">
+                    1x, sem juros
+                    </label>
+                </div>
+                <div class="form-check ">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" @click="parcelado2()">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                    2x, sem juros
+                    </label>
+                </div>
+                <div class="form-check ">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" @click="parcelado3()">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                    3x, sem juros
+                    </label>
+                </div>
+              </div>
           </div>
         </div>
 
@@ -198,7 +220,7 @@
                       <ul class="fw-normal mb-5">{{valorData}}</ul>
 
                       <ul class="fw-bold">Formas de pagamento da consulta</ul>
-                      <ul class="fw-normal mb-5">Nome completo</ul>
+                      <ul class="fw-normal mb-5">{{pagamentoData+parcelas}}</ul>
 
                     </li>
                     </div>
@@ -270,9 +292,19 @@ export default {
       telefoneData:"",
       valorData:"",
       especialidadeData:"",
+      pagamentoData:"",
+      cartao:false,
+      parcelas:"",
 
       f:()=>{this.seletorPage+=1},
-      v:()=>{this.seletorPage-=1}
+      v:()=>{this.seletorPage-=1},
+      dinheiro:()=>{this.pagamentoData="em dinheiro"},
+      pix:()=>{this.pagamentoData="pix"},
+      credito:()=>{this.pagamentoData="cartão de credito"},
+      parcelado1:()=>{this.parcelas="1x, sem juros"},
+      parcelado2:()=>{this.parcelas="2x, sem juros"},
+      parcelado3:()=>{this.parcelas="3x, sem juros"},
+      
       
     }
   },
