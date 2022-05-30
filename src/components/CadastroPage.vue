@@ -1,16 +1,16 @@
 <template>
 
-  <a  href="#" @click="v()">  
-<div class="text-start text-dark fw-bold container ms-5 p-3" >
+<div class="text-start text-dark fw-bold container ms-5 p-3" v-if="seletorPage==1 || seletorPage ==2">
+  <a class="text-dark fw-bold" href="#" @click="v()">  
 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
 </svg>
-  </div>
 </a>
+  </div>
 <div class="container">
     <div class="card mx-5 mb-5 p-3 shadow rd">
       <div class="card-body ">
-        <div>{{seletorPage}}</div>
+        
         <div class="paginaA" v-if="seletorPage==0">
         <h1 class="mb-3 text-start">Sobre o professional</h1>
         <h3 class="my-5 text-start">Dados do profissional</h3>
@@ -303,8 +303,8 @@ export default {
       cartao:false,
       parcelas:"",
 
-      f:()=>{this.seletorPage+=1},
-      v:()=>{this.seletorPage-=1},
+      f:()=>{ if(this.seletorPage >= 0 && this.seletorPage <= 2) {this.seletorPage+=1}},
+      v:()=>{if (this.seletorPage>=1) {this.seletorPage-=1}},
       dinheiro:()=>{this.pagamentoData="em dinheiro"},
       pix:()=>{this.pagamentoData="pix"},
       credito:()=>{this.pagamentoData="cartão de credito"},
