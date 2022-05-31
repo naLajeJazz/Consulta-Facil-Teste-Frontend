@@ -15,22 +15,22 @@
         <h1 class="mb-3 text-start">Sobre o professional</h1>
         <h3 class="my-5 text-start">Dados do profissional</h3>
 
-      <form  class="row g-3 needs-validation "   >
+      <form  class="row g-3 needs-validation " novalidate  >
 
       <div class="col-md-6 text-start">
 
-        <label for="validationCustom01" class="form-label my-3 ">Nome completo*</label>
-        <input type="text" class="form-control"  placeholder="Digite o nome completo"  v-model="nomeData" required>
+        <label for="validationCustom01" class="form-label my-3  ">Nome completo*</label>
+        <input type="text" class="form-control borda"  placeholder="Digite o nome completo"  v-model="nomeData" required>
        
 
         <label for="validationCustom05" class="form-label my-3" aria-placeholder="ola">CPF*</label>
-        <input type="text" class="form-control" v-model="cpfData" required>
+        <input type="text" class="form-control" placeholder="digite um cpf" v-model="cpfData" required>
         <div class="invalid-feedback">
          Please provide a valid zip.
         </div>
 
         <label for="validationCustom05" class="form-label my-3">Número de celular*</label>
-        <input type="text" class="form-control" v-model="telefoneData" required>
+        <input type="text" class="form-control" placeholder="(00)0 0000-0000" v-model="telefoneData" required>
         
 <div class="row">
 
@@ -104,7 +104,7 @@
                   
                   <div class="input-group mb-3 ">
                     <span class="input-group-text bck text-light">R$</span>
-                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" v-model="valorData" required>
+                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="valor" v-model="valorData" required>
                   </div>
                 </div>
         
