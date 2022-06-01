@@ -66,11 +66,6 @@
 </div>
 
 
-<!--     
-
-  <div v-for="c in cpf" :key="c.id">{{c.cpf}}</div>
--->
-
       </div>
 <div class="col-md-6 my-auto  ">
   <img src="../assets/1.png"  alt="">
@@ -78,15 +73,8 @@
 </div>
 
     </form>
-      
-      
+         
       </div>
-
-
-
-
-
-
 
       <div class="paginaB" v-else-if="seletorPage==1">
             <h1 class="mb-3 text-start">Sobre o Atendimento</h1>
@@ -193,11 +181,6 @@
       
       </div>
 
-
-
-
-
-
       <div class="paginaC" v-else-if="seletorPage==2">
       
 <div class="row">
@@ -234,13 +217,7 @@
                     </li>
                     </div>
                     
-                
-
-                   
-                   
-
-                    
-
+              
                   </div>
 
 
@@ -278,8 +255,8 @@
         <a href="#" class="btn text-dark fw-bold" type="submit" @click="seletorPage=3">CADASTRAR PROFISSIONAL</a>
       </div>
 
-      <div>
-        <a href="#" class="borda  fw-bold edCad" v-if="seletorPage==2" @click="seletorPage=0">Editar cadastro</a> 
+      <div class="col-md-6">
+        <a href="#" class=" fw-bold edCad" v-if="seletorPage==2" @click="seletorPage=0">Editar cadastro</a> 
       </div>
 
            
@@ -318,10 +295,8 @@ export default {
       pagamentoData:null,
       cartao:false,
       parcelas:"",
-      color:null,
       
-    
-      
+        
       formVal:()=>{
         
   if (this.seletorPage==0){
@@ -335,10 +310,7 @@ if (this.especialidadeData && this.valorData && this.pagamentoData){
 }else if (this.seletorPage==1){alert("Por favor preencha todos os campos")}
 
   }
-
-          
-           
-           },
+},
 
 
 
@@ -371,7 +343,6 @@ if (this.especialidadeData && this.valorData && this.pagamentoData){
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1{
   font-family: 'Comfortaa', cursive, Helvetica, Arial, sans-serif;
@@ -437,10 +408,5 @@ img {
   text-decoration: none;
   color: #483698 ;
 }
-.borda{
-  border: 1px solid ;
-}
-.bord{
-  border: 1px solid blue;
-}
+
 </style>
