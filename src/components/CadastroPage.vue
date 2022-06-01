@@ -8,23 +8,25 @@
 </a>
   </div>
 <div class="container">
+  
     <div class="card mx-5 mb-5 p-3 shadow rd">
       <div class="card-body ">
         
         <div class="paginaA" v-if="seletorPage==0">
+       
         <h1 class="mb-3 text-start">Sobre o professional</h1>
         <h3 class="my-5 text-start">Dados do profissional</h3>
 
-      <form  class="row g-3 needs-validation " novalidate  >
+      <form  class="row g-3 needs-validation "   >
 
       <div class="col-md-6 text-start">
 
         <label for="validationCustom01" class="form-label my-3  ">Nome completo*</label>
-        <input type="text" class="form-control borda"  placeholder="Digite o nome completo"  v-model="nomeData" required>
+        <input type="text" class="form-control  "  placeholder="Digite o nome completo"    v-model="nomeData"  required>
        
 
         <label for="validationCustom05" class="form-label my-3" aria-placeholder="ola">CPF*</label>
-        <input type="text" class="form-control" placeholder="digite um cpf" v-model="cpfData" required>
+        <input type="text" class="form-control " placeholder="digite um cpf"  v-model="cpfData" required>
         <div class="invalid-feedback">
          Please provide a valid zip.
         </div>
@@ -251,16 +253,36 @@
 </div>
       
       </div>
+      <div class="paginaC" v-else-if="seletorPage==3">
+      
+<div class="row">
+        <h1 class="mb-3 text-start ps-5">{{nomeData}} seu cadastro esta completo</h1>
+
+
+                  <div class=" col-md-6 text-start ps-5  my-4">
+
+                   Agora é só aguardar o agendamento da sua consulta<br>
+                   Muito Obrigado!
+                    
+    
+                  </div>
+
+
+            
+                  
+</div>
+      
+      </div>
 
 
       
 
       <div class="my-3 col-md-6 d-grid gap-2 bck rd " v-if="seletorPage==0 || seletorPage==1" >
-        <button  class="btn text-light" type="submit" @click="f()">PRÓXIMO</button>
+        <a href="#" class="btn text-light" type="submit"  @click="formVal()">PRÓXIMO</a>
       </div>
 
       <div class="my-4 col-md-6 d-grid  bck2 rd " v-if="seletorPage==2" >
-        <button  class="btn text-dark fw-bold" type="submit">CADASTRAR PROFISSIONAL</button>
+        <a href="#" class="btn text-dark fw-bold" type="submit" @click="seletorPage=3">CADASTRAR PROFISSIONAL</a>
       </div>
 
       <div>
@@ -286,24 +308,47 @@ export default {
   },
   data() {
     return {
+      
       seletorPage:0,
       titulo: 'Sobre o professional',
       estado: [],
       cidade: [],
       cpf: [],
       especialidade: [],
-      nomeData:"",
-      cpfData:"",
-      estadoData:"",
-      cidadeData:"",
-      telefoneData:"",
-      valorData:"",
-      especialidadeData:"",
-      pagamentoData:"",
+      nomeData:null,
+      cpfData:null,
+      estadoData:null,
+      cidadeData:null,
+      telefoneData:null,
+      valorData:null,
+      especialidadeData:null,
+      pagamentoData:null,
       cartao:false,
       parcelas:"",
+      color:null,
+      
+    
+      
+      formVal:()=>{
+        
+  if (this.seletorPage==0){
 
-      f:()=>{ if(this.seletorPage >= 0 && this.seletorPage <= 2) {this.seletorPage+=1}},
+if( this.nomeData && this.cpfData && this.estadoData && this.cidadeData && this.telefoneData) {
+  this.seletorPage+=1}else if (this.seletorPage==0){alert("Por favor preencha todos os campos")}}
+  else if (this.seletorPage==1){
+
+if (this.especialidadeData && this.valorData && this.pagamentoData){
+  this.seletorPage+=1
+}else if (this.seletorPage==1){alert("Por favor preencha todos os campos")}
+
+  }
+
+          
+           
+           },
+
+
+
       v:()=>{if (this.seletorPage>=1) {this.seletorPage-=1}},
       dinheiro:()=>{this.pagamentoData="em dinheiro"},
       pix:()=>{this.pagamentoData="pix"},
@@ -400,6 +445,9 @@ img {
   color: #483698 ;
 }
 .borda{
-  border: 1px solid red;
+  border: 1px solid ;
+}
+.bord{
+  border: 1px solid blue;
 }
 </style>
