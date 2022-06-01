@@ -7,6 +7,7 @@ Vue.js versão 3
 Vue router -ok
 CSS -ok
 Bootstrap versão 5
+Axios para as requisições da API
 Design responsivo -ok
 Botão no topo volta uma etapa no cadastro -ok
 Erro de validação- dispara Alert caso um campo não seja preenchido
