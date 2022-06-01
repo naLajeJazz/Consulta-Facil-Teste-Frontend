@@ -256,16 +256,9 @@
       <div class="paginaC" v-else-if="seletorPage==3">
       
 <div class="row">
-        <h1 class="mb-3 text-start ps-5">{{nomeData}} seu cadastro esta completo</h1>
+        <h1 class="mt-5  text-center p-5">{{nomeData}} seu cadastro esta completo!</h1>
 
-
-                  <div class=" col-md-6 text-start ps-5  my-4">
-
-                   Agora é só aguardar o agendamento da sua consulta<br>
-                   Muito Obrigado!
-                    
-    
-                  </div>
+<h3 class="my-3 ">Agora é só aguardar o agendamento da sua consulta</h3>
 
 
             
